@@ -125,7 +125,7 @@ class MainWindow(QtWidgets.QMainWindow):
         global endTime,startTime,wpm
         endTime=time.time()
         self.timeTaken=int(endTime-startTime)
-        wpm=(((len(self.result.text())/5-self.Errors()))/self.timeTaken)*60
+        wpm=(((len(self.result.text())-self.Errors()))/(5*self.timeTaken))*60
         if wpm<0:
             wpm=0
         wpm="{:.2f}".format(wpm)
